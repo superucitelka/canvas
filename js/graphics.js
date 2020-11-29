@@ -82,3 +82,18 @@ ctx.moveTo(200, 200);
 ctx.bezierCurveTo(200, 280, 275, 250, 350, 200);
 ctx.closePath();
 ctx.stroke();
+
+/***************************************************************/
+/* 7. Kreslení kvadratické křivky */
+ctx.beginPath();
+/* Nastavení počátečního bodu */
+ctx.moveTo(200, 250);
+/* Vytvoření kvadratické křivky:
+ * cpx, cpy - souřadnice kontrolního bodu 
+ * x, y       - souřadnice konečného bodu
+ */
+ctx.quadraticCurveTo(275, 300, 350, 250);
+/* Přenastavení barvy a tloušťky čáry */
+ctx.strokeStyle = 'gray';
+ctx.lineWidth = 1;
+ctx.stroke();
