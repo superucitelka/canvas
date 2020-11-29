@@ -36,3 +36,15 @@ ctx.moveTo(200, 20);
 ctx.lineTo(350, 20);
 /* Vykreslení obrysu - cesty */
 ctx.stroke();
+
+/***************************************************************/
+/* 4. Kreslení čáry se vzorem */
+/* Začátek nové cesty vykreslování */
+ctx.beginPath();
+/* Oblé zakončení čáry */
+ctx.lineCap = 'round';
+/* Vzor čáry [délka, mezera, délka, mezera, ...] */
+ctx.setLineDash([10, 15, 2, 15]);
+ctx.moveTo(200, 50);
+ctx.lineTo(350, 50);
+ctx.stroke();
