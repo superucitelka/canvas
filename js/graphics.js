@@ -97,3 +97,9 @@ ctx.quadraticCurveTo(275, 300, 350, 250);
 ctx.strokeStyle = 'gray';
 ctx.lineWidth = 1;
 ctx.stroke();
+
+/***************************************************************/
+/* 8. Kreslení kruhu */
+ctx.beginPath();
+ctx.arc(450, 75, 50, 0, 2 * Math.PI);
+ctx.stroke();
