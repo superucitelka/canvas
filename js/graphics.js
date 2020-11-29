@@ -48,3 +48,23 @@ ctx.setLineDash([10, 15, 2, 15]);
 ctx.moveTo(200, 50);
 ctx.lineTo(350, 50);
 ctx.stroke();
+
+/***************************************************************/
+/* 5. Kreslení polygonu - trojúhelníku  */
+ctx.beginPath();
+ctx.moveTo(200, 100);
+ctx.lineTo(350, 175);
+ctx.lineTo(200, 175);
+/* Uzavření cesty (zde je uzavřen trojúhelník) */
+ctx.closePath();
+/* Zaoblení rohů */
+ctx.lineJoin = 'round';
+ctx.stroke();
+/* Vyplnění uzavřeného trojúhelníku zelenou barvou */
+/* Nastavení výplně */
+ctx.fillStyle = 'green';
+/* Aplikace výplně v uzavřené ploše */
+ctx.fill();
+
+/* Obnovení nastavení plné čáry bez vzorku */
+ctx.setLineDash([]);
