@@ -20,3 +20,19 @@ ctx.fillRect(0, 100, 150, 75);
 ctx.strokeStyle = 'black';
 /* Vykreslení obdélníku (čtverce) pomocí obrysu */
 ctx.strokeRect(40, 200, 70, 70);
+
+/***************************************************************/
+/* 3. Kreslení plné čáry */
+/* Začátek cesty */
+ctx.beginPath();
+ctx.strokeStyle = 'blue';
+/* Nastavení tloušťky čáry */
+ctx.lineWidth = 10;
+/* Nastavení zakončení čáry */
+ctx.lineCap = 'square';
+/* Přesun do konkrétního bodu plátna */
+ctx.moveTo(200, 20);
+/* Nakreslení čáry z počátečního bodu do bodu x, y */
+ctx.lineTo(350, 20);
+/* Vykreslení obrysu - cesty */
+ctx.stroke();
