@@ -68,3 +68,17 @@ ctx.fill();
 
 /* Obnovení nastavení plné čáry bez vzorku */
 ctx.setLineDash([]);
+
+/***************************************************************/
+/* 6. Kreslení Beziérovy křivky */
+ctx.beginPath();
+/* Nastavení počátečního bodu */
+ctx.moveTo(200, 200);
+/* Vytvoření Beziérovy křivky:
+ * cp1x, cp1y - souřadnice prvního kontrolního bodu 
+ * cp2x, cp2y - souřadnice druhého kontrolního bodu 
+ * x, y       - souřadnice konečného bodu
+ */
+ctx.bezierCurveTo(200, 280, 275, 250, 350, 200);
+ctx.closePath();
+ctx.stroke();
