@@ -103,3 +103,19 @@ ctx.stroke();
 ctx.beginPath();
 ctx.arc(450, 75, 50, 0, 2 * Math.PI);
 ctx.stroke();
+
+/***************************************************************/
+/* 9. Kreslení výseče */
+ctx.beginPath();
+/* Nastavení bodu */
+ctx.moveTo(400, 150);
+/* Vykreslení čáry o délce poloměru výseče */
+ctx.lineTo(500, 150);
+/* Vykreslení oblouku (60 stupňů) */
+ctx.arc(400, 150, 100, 0, (2 * Math.PI) / (360 / 60));
+/* Uzavření výseče */
+ctx.closePath();
+ctx.stroke();
+/* Vyplnění žlutou barvou */
+ctx.fillStyle = 'yellow';
+ctx.fill();
