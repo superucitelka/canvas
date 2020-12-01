@@ -199,3 +199,20 @@ ctx.shadowColor = 'rgba(0, 0, 0, 0.5)';
 ctx.fillStyle = 'red';
 ctx.fillRect(200, 300, 100, 80);
 
+/***************************************************************/
+/* 14. Vzorky */
+/* Načtení obrázku - vzorku */
+let lamp = new Image();
+lamp.src = 'img/lamp.jpg';
+lamp.onload = function() {
+   /* Vytvoření opakujícího se vzorku */
+   let pat = ctx.createPattern(lamp, 'repeat');
+   ctx.beginPath();
+   /* Vykreslení elipsy pootočené o 45 stupňů:
+   viz https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/ellipse */
+   ctx.ellipse(300, 500, 100, 80, Math.PI / 4, 0, 2 * Math.PI);
+   /* Nastavení vzorku do výplně */
+   ctx.fillStyle = pat;
+   ctx.fill();
+   ctx.closePath();
+}
