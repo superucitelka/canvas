@@ -216,3 +216,19 @@ lamp.onload = function() {
    ctx.fill();
    ctx.closePath();
 }
+
+/***************************************************************/
+/* 15. Transformace, otočení - https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/rotate */
+// Neotočený obdélník
+ctx.shadowColor = 'rgba(0, 0, 0, 0)';
+ctx.fillStyle = 'gray';
+ctx.fillRect(600, 400, 140, 30);
+// Transformace matice
+ctx.translate(670, 415);
+ctx.rotate(Math.PI / 2);
+ctx.translate(-670, -415);
+// Otočený obdélník o 90 stupňů
+ctx.fillStyle = 'red';
+ctx.fillRect(600, 400, 140, 30);
+// Nastavení matice do původní podoby - https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/setTransform
+ctx.setTransform(1, 0, 0, 1, 0, 0);
