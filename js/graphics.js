@@ -135,7 +135,7 @@ viz https://developer.mozilla.org/en-US/docs/Web/API/FontFaceSet/load */
 document.fonts.load('40px "Great Vibes"').then(
    function () {
       /* */
-      ctx.font = "40px Great Vibes";
+      ctx.font = "40px Great Vibes";      
       ctx.fillStyle = "red";
       /* Zarovnání textu vůči referenčnímu bodu */
       ctx.textAlign = "right";
@@ -185,3 +185,17 @@ ctx.fillStyle = radGrd;
 ctx.arc(50, 550, 50, 0, 2 * Math.PI);
 ctx.fill();
 ctx.closePath();
+
+/***************************************************************/
+/* 13. Stíny */
+/* Nastavení rozostření stínu */
+ctx.shadowBlur = 10;
+/* Nastavení odsazení stínu v ose X a Y */
+ctx.shadowOffsetX = 20;
+ctx.shadowOffsetY = 20;
+/* Nastavení barvy stínu, zde i průhlednosti */
+ctx.shadowColor = 'rgba(0, 0, 0, 0.5)';
+/* Vykreslení vyplněného obdélníka */
+ctx.fillStyle = 'red';
+ctx.fillRect(200, 300, 100, 80);
+
