@@ -143,3 +143,17 @@ document.fonts.load('40px "Great Vibes"').then(
       ctx.fillText("Kreslení na plátno", 780, 100);
    }
 )
+
+/***************************************************************/
+/* 11. Obrázky */
+/* Vytvoření nového obrazového objektu */
+let img = new Image();
+/* Nastavení zdroje / cesty k obrázku */
+img.src = 'img/web-logos.png';
+/* Po načtení obrázku... */
+img.onload = function() {
+   /* ...bude vykreslen na dané pozici plátna a podle zadané šířky a výšky */
+   ctx.drawImage(img, 550, 150, 205, 120);
+}
+
+ 
