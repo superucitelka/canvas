@@ -156,4 +156,32 @@ img.onload = function() {
    ctx.drawImage(img, 550, 150, 205, 120);
 }
 
+/***************************************************************/
+/* 12. Přechody */
+/* Vytvoření nového lineárního přechodu - počáteční souřadnice, koncové souřadnice */
+let linGrd = ctx.createLinearGradient(0, 0, 150, 0);
+/* Nastavení počáteční barvy */
+linGrd.addColorStop(0, 'blue');
+/* Nastavení konečné barvy */
+linGrd.addColorStop(1, 'white');
+/* Nastavení výplně jako přechodu */
+ctx.fillStyle = linGrd;
+/* Vykreslení obdélníka */
+ctx.fillRect(0, 300, 150, 80);
  
+/* Vytvoření nového radiálního přechodu - počáteční souřadnice + poloměr, koncové souřadnice + poloměr */
+let radGrd = ctx.createRadialGradient(50, 450, 0, 50, 450, 50);
+radGrd.addColorStop(0, 'green');
+radGrd.addColorStop(1, 'yellow');
+ctx.fillStyle = radGrd;
+ctx.fillRect(0, 400, 150, 100);
+
+/* Aplikace radiálního přechodu v kruhu */
+ctx.beginPath();
+radGrd = ctx.createRadialGradient(50, 550, 0, 50, 550, 50);
+radGrd.addColorStop(0, 'black');
+radGrd.addColorStop(1, 'lightgray');
+ctx.fillStyle = radGrd;
+ctx.arc(50, 550, 50, 0, 2 * Math.PI);
+ctx.fill();
+ctx.closePath();
