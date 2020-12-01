@@ -6,7 +6,7 @@ const ctx = canvas.getContext('2d');
 
 /***************************************************************/
 /* 1. Kreslení vyplněných obdélníků */
-/* V atributu fillStyle je nastavena barva výplně */ 
+/* V atributu fillStyle je nastavena barva výplně */
 ctx.fillStyle = '#FF0000';
 /* Vykreslí obdélník s danou výplní a s parametry (pozice x, pozice y, šířka, výška) */
 ctx.fillRect(0, 0, 150, 75);
@@ -119,3 +119,27 @@ ctx.stroke();
 /* Vyplnění žlutou barvou */
 ctx.fillStyle = 'yellow';
 ctx.fill();
+
+
+/***************************************************************/
+/* 10. Text v grafice */
+/* Nastavení velikosti a typu fontu */
+ctx.font = "30px Arial";
+/* Nastavení stylu obrysu */
+ctx.strokeStyle = 'brown';
+/* Vypsání textu s obrysem a bez výplně od stanoveného bodu */
+ctx.strokeText("Grafika na webu", 550, 50);
+
+/* Umožní načíst externí font do dokumentu a poté provést akci
+viz https://developer.mozilla.org/en-US/docs/Web/API/FontFaceSet/load */
+document.fonts.load('40px "Great Vibes"').then(
+   function () {
+      /* */
+      ctx.font = "40px Great Vibes";
+      ctx.fillStyle = "red";
+      /* Zarovnání textu vůči referenčnímu bodu */
+      ctx.textAlign = "right";
+      /* Text s výplní */
+      ctx.fillText("Kreslení na plátno", 780, 100);
+   }
+)
