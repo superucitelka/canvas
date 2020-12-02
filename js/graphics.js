@@ -4,10 +4,22 @@ const canvas = document.getElementById('canvas');
    umožňuje používat různé grafické atributy a metody. */
 const ctx = canvas.getContext('2d');
 
-/* V atributu fillStyle je nastavena barva výplně */ 
-ctx.fillStyle = '#FF0000';
-/* Vykreslí obdélník s danou výplní a s parametry (pozice x, pozice y, šířka, výška) */
-ctx.fillRect(0, 0, 150, 75);
-/* Je možné použít nejen plnou barvu (rgb), ale i barvu s průhledností (rgba). */
-ctx.fillStyle = 'rgba(255, 0, 0, 0.5)';
-ctx.fillRect(0, 100, 150, 75);
+/* Objekt čtverce */
+let square = {
+   /* Délka strany */
+   size: 100,
+   /* Pozice - souřadnice lehého horního rohu */
+   x: canvas.width / 2 - 50,
+   y: canvas.height / 2 - 50,
+   /* Barva výplně */
+   color: 'red',
+
+   /* Vykreslovací funkce */
+   paint: function() {
+      ctx.fillStyle = this.color;
+      ctx.fillRect(this.x, this.y, this.size, this.size);      
+   }
+}
+
+/* Vykreslení objektu */
+square.paint();
